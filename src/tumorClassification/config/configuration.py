@@ -1,7 +1,8 @@
 from src.tumorClassification.utils.common import read_yaml,create_directories
 from src.tumorClassification.constants import *
 import os
-from src.tumorClassification.entity.config_entity import (DataIngestionConfig,PrepareBaseModelConfig,TrainingConfig,
+from src.tumorClassification.entity.config_entity import (DataIngestionConfig,PrepareBaseModelConfig,
+                                                          TrainingConfig,
                                                           EvaluationConfig)
 
 
@@ -74,6 +75,7 @@ class ConfigurationManager:
     
 
     def get_model_evaluation_config(self)-> EvaluationConfig:
+
         eval_config=EvaluationConfig(
             path_of_model="artifacts/model_trainer/model.h5",
             training_data="artifacts/data_ingestion/CT-KIDNEY-DATASET-Normal-Cyst-Tumor-Stone",

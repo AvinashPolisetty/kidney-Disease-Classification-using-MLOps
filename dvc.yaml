@@ -1,0 +1,52 @@
+stages:
+  data_ingestion:
+    cmd: python src/tumorClassification/pipeline/stage01_data_ingestion.py
+    deps:
+      - src/tumorClassification/pipeline/stage01_data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/Kidney-ct-scan_data.zip
+
+
+  prepare_base_model:
+    cmd: python src/tumorClassification/pipeline/stage02_prepare_basemodel.py
+    deps:
+      - src/tumorClassification/pipeline/stage02_prepare_basemodel.py
+      - config/config.yaml
+    params:
+      - IMAGE_SIZE
+      - INCLUDE_TOP
+      - CLASSES
+      - WEIGHTS
+      - LEARNING_RATE
+    outs:
+      - artifacts/prepare_base_model
+
+
+  model_trainer:
+    cmd: python src/tumorClassification/pipeline/stage03_model_trainer.py
+    deps:
+      - src/tumorClassification/pipeline/stage03_model_trainer.py
+      - config/config.yaml
+      - artifacts/data_ingestion/CT-KIDNEY-DATASET-Normal-Cyst-Tumor-Stone
+      - artifacts/prepare_base_model
+
+    outs:
+      - artifacts/model_trainer/model.h5
+
+  model_evaluation:
+    cmd: python src/tumorClassification/pipeline/stage04_model_evalution.py
+    deps:
+      - src/tumorClassification/pipeline/stage04_model_evalution.py
+      - config/config.yaml
+      - artifacts/data_ingestion/CT-KIDNEY-DATASET-Normal-Cyst-Tumor-Stone
+      - artifacts/model_trainer/model.h5
+    params:
+      - IMAGE_SIZE
+      - BATCH_SIZE
+    metrics:
+      - scores.json:
+          cache: false
+
+
+
