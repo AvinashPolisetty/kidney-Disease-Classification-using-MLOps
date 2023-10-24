@@ -29,6 +29,14 @@ def trainRoute():
     return "Training done successfully!"
 
 
+@app.route("/predict", methods=['POST'])
+@cross_origin()
+def predictRoute():
+    image = request.json['image']
+    decodeImage(image, clApp.filename)
+    result = clApp.classifier.predict()
+    return jsonify(result)
+
 
 if __name__ == "__main__":
     clApp = ClientApp()
