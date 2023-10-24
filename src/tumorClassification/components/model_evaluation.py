@@ -42,6 +42,7 @@ class Evaluation:
     
 
     def evaluation(self):
+        model=tf.keras.models.load_model("artifacts/model_trainer/model.h5")
         self.model = self.load_model(self.config.path_of_model)
         self._valid_generator()
         self.score = model.evaluate(self.valid_generator)

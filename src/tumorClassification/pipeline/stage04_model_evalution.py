@@ -7,8 +7,11 @@ class EvaluationPipeline:
         pass
 
     def main(self):
-        config = ConfigurationManager()
-        eval_config = config.get_evaluation_config()
-        evaluation = Evaluation(config=eval_config)
-        evaluation.evaluation()
-        evaluation.save_score()
+        try:
+            config = ConfigurationManager()
+            eval_config = config.get_model_evaluation_config()
+            evaluation = Evaluation(config=eval_config)
+            evaluation.evaluation()
+            evaluation.save_score()
+        except Exception as e:
+            raise e
