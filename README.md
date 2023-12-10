@@ -1,6 +1,20 @@
-# Tumor Classification
+# Project Name
+Tumor Classification
 
-963951113939.dkr.ecr.eu-north-1.amazonaws.com/tumor-1
+## Overview
+
+This project is used to classify whether there is tumor inside the kidney or not.
+
+### Requirements
+
+- Python 
+- MySQL 
+
+### Dependencies
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
 
 
-http://51.20.76.90:8080/
