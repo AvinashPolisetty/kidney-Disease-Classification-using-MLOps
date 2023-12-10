@@ -19,8 +19,9 @@ pip install -r requirements.txt
 ```
 
 ### Database Setup
- # -Install MySQL Server.
- # -Create a Database and Tables.
+
+ -Install MySQL Server
+ -Create a Database and Tables
 
 ```bash
 CREATE DATABASE IF NOT EXISTS your_database_name;
