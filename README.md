@@ -31,15 +31,15 @@ USE your_database_name;
 CREATE TABLE IF NOT EXISTS table_name (
     column1 datatype constraints,
     column2 datatype constraints,
-    -- Define other columns and constraints
+- Define other columns and constraints
 );
 ```
 -Configure Database in database/db_operation.py 
 ```bash
-DB_HOST = 'localhost'
-DB_USER = 'your_username'
-DB_PASSWORD = 'your_password'
-DB_NAME = 'your_database_name'
+DB_HOST = 'localhost' --> Provide the localhost.
+DB_USER = 'your_username' ---> Give the username inplace of 'your_username'
+DB_PASSWORD = 'your_password'  ---> Give password
+DB_NAME = 'your_database_name' ---> Enter the database name
 ```
 ### Usage
 Run the application
