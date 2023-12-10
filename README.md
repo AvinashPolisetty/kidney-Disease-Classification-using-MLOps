@@ -28,7 +28,7 @@ CREATE DATABASE IF NOT EXISTS your_database_name;
 USE your_database_name;
 
 -- Create tables
-CREATE TABLE IF NOT EXISTS table_name (
+CREATE TABLE table_name (
     column1 datatype constraints,
     column2 datatype constraints,
 - Define other columns and constraints
