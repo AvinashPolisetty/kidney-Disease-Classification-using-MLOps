@@ -51,6 +51,10 @@ python app.py
 
 -  Open a web browser and navigate to http://localhost:8080
 
+###  Predict ouput
+
+-  For the prediction use the "Test Images Data" inside the project folder at artifacts/data_ingestion .
+
 
 
 
