@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Kidney tumor Classification
-=======
 # Project Name
 Tumor Classification
 
@@ -57,4 +54,3 @@ python app.py
 
 
 
->>>>>>> 094c4478fa745d700a4c220af87a284e1b2987eb
