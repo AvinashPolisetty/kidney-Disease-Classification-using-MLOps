@@ -16,4 +16,5 @@ scipy
 Flask
 Flask-Cors
 gdown
+mysql-connector-python
 -e .

@@ -3,6 +3,7 @@ from flask_cors import CORS,cross_origin
 import os
 from src.tumorClassification.utils.common import decodeImage
 from src.tumorClassification.pipeline.prediction import PredictionPipeline
+from src.tumorClassification.database.db_operation import DatabaseHandler
 
 
 os.putenv('LANG', 'en_US.UTF-8')
@@ -35,10 +36,14 @@ def predictRoute():
     image = request.json['image']
     decodeImage(image, clApp.filename)
     result = clApp.classifier.predict()
+
+    db_handler = DatabaseHandler()
+    db_handler.insert_prediction("path_to_image", result)
+    db_handler.close_connection()
+
     return jsonify(result)
 
-
 if __name__ == "__main__":
+    
     clApp = ClientApp()
-
     app.run(host='0.0.0.0', port=8080)  
