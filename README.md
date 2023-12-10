@@ -20,8 +20,8 @@ pip install -r requirements.txt
 
 ### Database Setup
 
-- Install MySQL Server
-- Create a Database and Tables
+-  Install MySQL Server
+-  Create a Database and Tables
 
 ```bash
 CREATE DATABASE IF NOT EXISTS your_database_name;
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS table_name (
     -- Define other columns and constraints
 );
 ```
--Configure Database in database/db_operation.py :
+-Configure Database in database/db_operation.py 
 ```bash
 DB_HOST = 'localhost'
 DB_USER = 'your_username'
@@ -47,8 +47,9 @@ Run the application
 python app.py
 ```
 
-Access the application:
-- Open a web browser and navigate to http://localhost:8080
+### Access the application
+
+-  Open a web browser and navigate to http://localhost:8080
 
 
 
